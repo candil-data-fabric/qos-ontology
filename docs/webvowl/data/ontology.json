@@ -22,17 +22,17 @@
         "value" : "Ignacio Dominguez Martinez-Casanueva",
         "type" : "label"
       } ],
-      "createdWith" : [ {
-        "identifier" : "createdWith",
-        "language" : "undefined",
-        "value" : "https://chowlk.linkeddata.es/",
-        "type" : "iri"
-      } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Riccardo Nicolicchia",
         "type" : "label"
+      } ],
+      "createdWith" : [ {
+        "identifier" : "createdWith",
+        "language" : "undefined",
+        "value" : "https://chowlk.linkeddata.es/",
+        "type" : "iri"
       } ],
       "created" : [ {
         "identifier" : "created",
@@ -58,17 +58,17 @@
         "value" : "https://github.com/candil-data-fabric/qos-ontology",
         "type" : "iri"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/candil/qos#",
-        "type" : "iri"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "1.0.0",
         "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/qos#",
+        "type" : "iri"
       } ],
       "title" : [ {
         "identifier" : "title",
@@ -125,7 +125,7 @@
     "id" : "16",
     "type" : "owl:Class"
   }, {
-    "id" : "21",
+    "id" : "22",
     "type" : "owl:Class"
   }, {
     "id" : "3",
@@ -314,7 +314,7 @@
     "comment" : {
       "undefined" : "Type of network slice."
     },
-    "id" : "21"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/candil/qos#Session",
     "baseIri" : "https://w3id.org/candil/qos",
@@ -371,7 +371,7 @@
     "id" : "20",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "owl:objectProperty"
   }, {
     "id" : "24",
@@ -469,20 +469,6 @@
     "attributes" : [ "object" ],
     "id" : "17"
   }, {
-    "iri" : "https://w3id.org/candil/qos#networkSliceType",
-    "baseIri" : "https://w3id.org/candil/qos",
-    "range" : "21",
-    "label" : {
-      "IRI-based" : "networkSliceType",
-      "undefined" : "network slice type"
-    },
-    "domain" : "18",
-    "comment" : {
-      "undefined" : "Refers to the type of a network slice."
-    },
-    "attributes" : [ "object" ],
-    "id" : "20"
-  }, {
     "iri" : "http://qudt.org/2.1/schema/qudt/unit",
     "baseIri" : "http://qudt.org/2.1/schema/qudt",
     "range" : "0",
@@ -492,7 +478,21 @@
     },
     "domain" : "10",
     "attributes" : [ "external", "object" ],
-    "id" : "22"
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#networkSliceType",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "networkSliceType",
+      "undefined" : "network slice type"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the type of a network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "21"
   }, {
     "iri" : "https://w3id.org/candil/qos#5qi",
     "baseIri" : "https://w3id.org/candil/qos",
@@ -558,7 +558,7 @@
       "undefined" : "identifier"
     },
     "domain" : "26",
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "30"
   }, {
     "iri" : "https://w3id.org/candil/qos#userEquipment",
@@ -597,7 +597,7 @@
       "undefined" : "numeric value"
     },
     "domain" : "26",
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "33"
   } ]
 }
