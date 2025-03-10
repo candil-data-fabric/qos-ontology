@@ -1,0 +1,284 @@
+<https://w3id.org/candil/qos#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/elements/1.1/contributor> "Riccardo Nicolicchia" .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/elements/1.1/created> "2025-03-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/elements/1.1/creator> "Ignacio Dominguez Martinez-Casanueva" .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/elements/1.1/title> "QoS Ontology" .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/APACHE2.0> .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/terms/publisher> _:genid1 .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "CANDIL Data Fabric" .
+_:genid1 <http://xmlns.com/foaf/0.1/homepage> <https://github.com/candil-data-fabric> .
+<https://w3id.org/candil/qos#> <http://purl.org/dc/terms/source> <https://github.com/candil-data-fabric/qos-ontology> .
+<https://w3id.org/candil/qos#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "cdqos" .
+<https://w3id.org/candil/qos#> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/candil/qos#> .
+<https://w3id.org/candil/qos#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/candil/qos#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://qudt.org/2.1/schema/qudt/unit
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/2.1/schema/qudt/Unit> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit" .
+# 
+# https://w3id.org/candil/qos#applicationServer
+<https://w3id.org/candil/qos#applicationServer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#applicationServer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#Session> .
+<https://w3id.org/candil/qos#applicationServer> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#ApplicationServer> .
+<https://w3id.org/candil/qos#applicationServer> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the application server requesting the QoS session." .
+<https://w3id.org/candil/qos#applicationServer> <http://www.w3.org/2000/01/rdf-schema#label> "application server" .
+# 
+# https://w3id.org/candil/qos#assignedQosProfile
+<https://w3id.org/candil/qos#assignedQosProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#assignedQosProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#Session> .
+<https://w3id.org/candil/qos#assignedQosProfile> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#QoSProfile> .
+<https://w3id.org/candil/qos#assignedQosProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the QoS Profile assigned to a given QoS session." .
+<https://w3id.org/candil/qos#assignedQosProfile> <http://www.w3.org/2000/01/rdf-schema#label> "assigned qos profile" .
+# 
+# https://w3id.org/candil/qos#duration
+<https://w3id.org/candil/qos#duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#duration> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#Session> .
+<https://w3id.org/candil/qos#duration> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#Duration> .
+<https://w3id.org/candil/qos#duration> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the duration of a session." .
+<https://w3id.org/candil/qos#duration> <http://www.w3.org/2000/01/rdf-schema#label> "duration" .
+# 
+# https://w3id.org/candil/qos#mapsToNetworkProfile
+<https://w3id.org/candil/qos#mapsToNetworkProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#mapsToNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#QoSProfile> .
+<https://w3id.org/candil/qos#mapsToNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#NetworkProfile> .
+<https://w3id.org/candil/qos#mapsToNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the network profiles that maps to a given QoS profile." .
+<https://w3id.org/candil/qos#mapsToNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#label> "maps to network profile" .
+# 
+# https://w3id.org/candil/qos#mbrDownlink
+<https://w3id.org/candil/qos#mbrDownlink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#mbrDownlink> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#NetworkSlice> .
+<https://w3id.org/candil/qos#mbrDownlink> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#MbrDownlink> .
+<https://w3id.org/candil/qos#mbrDownlink> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the mbr for downlink of a network slice." .
+<https://w3id.org/candil/qos#mbrDownlink> <http://www.w3.org/2000/01/rdf-schema#label> "mbr downlink" .
+# 
+# https://w3id.org/candil/qos#mbrUplink
+<https://w3id.org/candil/qos#mbrUplink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#mbrUplink> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#NetworkSlice> .
+<https://w3id.org/candil/qos#mbrUplink> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#MbrUplink> .
+<https://w3id.org/candil/qos#mbrUplink> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the mbr for uplink of a network slice." .
+<https://w3id.org/candil/qos#mbrUplink> <http://www.w3.org/2000/01/rdf-schema#label> "mbr uplink" .
+# 
+# https://w3id.org/candil/qos#networkSliceType
+<https://w3id.org/candil/qos#networkSliceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#networkSliceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#NetworkSlice> .
+<https://w3id.org/candil/qos#networkSliceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#NetworkSliceType> .
+<https://w3id.org/candil/qos#networkSliceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the type of a network slice." .
+<https://w3id.org/candil/qos#networkSliceType> <http://www.w3.org/2000/01/rdf-schema#label> "network slice type" .
+# 
+# https://w3id.org/candil/qos#userEquipment
+<https://w3id.org/candil/qos#userEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#userEquipment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#Session> .
+<https://w3id.org/candil/qos#userEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#UserEquipment> .
+<https://w3id.org/candil/qos#userEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the user equipment of a session." .
+<https://w3id.org/candil/qos#userEquipment> <http://www.w3.org/2000/01/rdf-schema#label> "user equipment" .
+# 
+# https://w3id.org/candil/qos#usesNetworkProfile
+<https://w3id.org/candil/qos#usesNetworkProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#usesNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#NetworkSlice> .
+<https://w3id.org/candil/qos#usesNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#NetworkProfile> .
+<https://w3id.org/candil/qos#usesNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the network profile used a by given network slice." .
+<https://w3id.org/candil/qos#usesNetworkProfile> <http://www.w3.org/2000/01/rdf-schema#label> "uses network profile" .
+# 
+# https://w3id.org/candil/qos#5qi
+<https://w3id.org/candil/qos#5qi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/qos#5qi> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#NetworkSlice> .
+<https://w3id.org/candil/qos#5qi> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/qos#5QI> .
+<https://w3id.org/candil/qos#5qi> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the 5G QoS identifier used by a network slice." .
+<https://w3id.org/candil/qos#5qi> <http://www.w3.org/2000/01/rdf-schema#label> "5qi" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+# 
+# http://qudt.org/2.1/schema/qudt/numericValue
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#label> "numeric value" .
+# 
+# https://w3id.org/candil/qos#ipAddress
+<https://w3id.org/candil/qos#ipAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/qos#ipAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#ApplicationServer> .
+<https://w3id.org/candil/qos#ipAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#UserEquipment> .
+<https://w3id.org/candil/qos#ipAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "IPv4 address." .
+<https://w3id.org/candil/qos#ipAddress> <http://www.w3.org/2000/01/rdf-schema#label> "ip address" .
+# 
+# https://w3id.org/candil/qos#scsAsId
+<https://w3id.org/candil/qos#scsAsId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/qos#scsAsId> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/qos#ApplicationServer> .
+<https://w3id.org/candil/qos#scsAsId> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the SCS/AS." .
+<https://w3id.org/candil/qos#scsAsId> <http://www.w3.org/2000/01/rdf-schema#label> "scs as id" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://qudt.org/2.1/schema/qudt/Unit
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
+# 
+# https://w3id.org/candil/qos#ApplicationServer
+<https://w3id.org/candil/qos#ApplicationServer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#ApplicationServer> <http://www.w3.org/2000/01/rdf-schema#comment> "Application server of a QoS session." .
+<https://w3id.org/candil/qos#ApplicationServer> <http://www.w3.org/2000/01/rdf-schema#label> "Application Server" .
+# 
+# https://w3id.org/candil/qos#Duration
+<https://w3id.org/candil/qos#Duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#Duration> <http://www.w3.org/2000/01/rdf-schema#comment> "Duration of the requested QoS session." .
+<https://w3id.org/candil/qos#Duration> <http://www.w3.org/2000/01/rdf-schema#label> "Duration" .
+# 
+# https://w3id.org/candil/qos#MbrDownlink
+<https://w3id.org/candil/qos#MbrDownlink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#MbrDownlink> <http://www.w3.org/2000/01/rdf-schema#comment> "Maximum Bit Rate (MBR) for downlink traffic in a network configuration." .
+<https://w3id.org/candil/qos#MbrDownlink> <http://www.w3.org/2000/01/rdf-schema#label> "Maximum Bit Rate Downlink" .
+# 
+# https://w3id.org/candil/qos#MbrUplink
+<https://w3id.org/candil/qos#MbrUplink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#MbrUplink> <http://www.w3.org/2000/01/rdf-schema#comment> "Maximum Bit Rate (MBR) for uplink traffic in a network configuration." .
+<https://w3id.org/candil/qos#MbrUplink> <http://www.w3.org/2000/01/rdf-schema#label> "Maximum Bit Rate Uplink" .
+# 
+# https://w3id.org/candil/qos#NetworkProfile
+<https://w3id.org/candil/qos#NetworkProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#NetworkProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "Network profile." .
+<https://w3id.org/candil/qos#NetworkProfile> <http://www.w3.org/2000/01/rdf-schema#label> "Network Profile" .
+# 
+# https://w3id.org/candil/qos#NetworkSlice
+<https://w3id.org/candil/qos#NetworkSlice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#NetworkSlice> <http://www.w3.org/2000/01/rdf-schema#comment> "Network slice." .
+<https://w3id.org/candil/qos#NetworkSlice> <http://www.w3.org/2000/01/rdf-schema#label> "Network Slice" .
+# 
+# https://w3id.org/candil/qos#NetworkSliceType
+<https://w3id.org/candil/qos#NetworkSliceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#NetworkSliceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of network slice." .
+<https://w3id.org/candil/qos#NetworkSliceType> <http://www.w3.org/2000/01/rdf-schema#label> "Network Slice Type" .
+# 
+# https://w3id.org/candil/qos#QoSProfile
+<https://w3id.org/candil/qos#QoSProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#QoSProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "QoS profile a requested session." .
+<https://w3id.org/candil/qos#QoSProfile> <http://www.w3.org/2000/01/rdf-schema#label> "QoS Profile" .
+# 
+# https://w3id.org/candil/qos#Session
+<https://w3id.org/candil/qos#Session> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#Session> <http://www.w3.org/2000/01/rdf-schema#comment> "QoS session." .
+<https://w3id.org/candil/qos#Session> <http://www.w3.org/2000/01/rdf-schema#label> "Session" .
+# 
+# https://w3id.org/candil/qos#UserEquipment
+<https://w3id.org/candil/qos#UserEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#UserEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> "User equipment of a requested QoS session." .
+<https://w3id.org/candil/qos#UserEquipment> <http://www.w3.org/2000/01/rdf-schema#label> "User Equipment" .
+# 
+# https://w3id.org/candil/qos#5QI
+<https://w3id.org/candil/qos#5QI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/qos#5QI> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the duration of a session." .
+<https://w3id.org/candil/qos#5QI> <http://www.w3.org/2000/01/rdf-schema#label> "5G QoS Identifier" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/qos#NetworkSliceHigh
+<https://w3id.org/candil/qos#NetworkSliceHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/qos#NetworkSliceHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/qos#NetworkSliceType> .
+# 
+# https://w3id.org/candil/qos#NetworkSliceLow
+<https://w3id.org/candil/qos#NetworkSliceLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/qos#NetworkSliceLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/qos#NetworkSliceType> .
+# 
+# https://w3id.org/candil/qos#NetworkSliceMedium
+<https://w3id.org/candil/qos#NetworkSliceMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/qos#NetworkSliceMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/qos#NetworkSliceType> .
+# 
+# https://w3id.org/candil/qos#NetworkSliceUltimate
+<https://w3id.org/candil/qos#NetworkSliceUltimate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/qos#NetworkSliceUltimate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/qos#NetworkSliceType> .
+# 
+_:genid2 <http://xmlns.com/foaf/0.1/homepage> <https://github.com/candil-data-fabric> .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "CANDIL Data Fabric" .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

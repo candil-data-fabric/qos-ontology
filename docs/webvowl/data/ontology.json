@@ -1,0 +1,603 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://qudt.org/2.1/schema/qudt", "https://w3id.org/candil/qos", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "QoS Ontology"
+    },
+    "iri" : "https://w3id.org/candil/qos#",
+    "version" : "1.0.0",
+    "author" : [ "Ignacio Dominguez Martinez-Casanueva" ],
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://purl.org/NET/rdflicense/APACHE2.0",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Ignacio Dominguez Martinez-Casanueva",
+        "type" : "label"
+      } ],
+      "createdWith" : [ {
+        "identifier" : "createdWith",
+        "language" : "undefined",
+        "value" : "https://chowlk.linkeddata.es/",
+        "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Riccardo Nicolicchia",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2025-03-10",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "cdqos",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "_:genid2147483648",
+        "type" : "label"
+      } ],
+      "source" : [ {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "https://github.com/candil-data-fabric/qos-ontology",
+        "type" : "iri"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/qos#",
+        "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "QoS Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "10",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://qudt.org/2.1/schema/qudt/Unit",
+    "baseIri" : "http://qudt.org/2.1/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Unit",
+      "undefined" : "Unit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#MbrUplink",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MbrUplink",
+      "undefined" : "Maximum Bit Rate Uplink"
+    },
+    "comment" : {
+      "undefined" : "Maximum Bit Rate (MBR) for uplink traffic in a network configuration."
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "10",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "7", "16" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#Duration",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Duration",
+      "undefined" : "Duration"
+    },
+    "comment" : {
+      "undefined" : "Duration of the requested QoS session."
+    },
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#MbrDownlink",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MbrDownlink",
+      "undefined" : "Maximum Bit Rate Downlink"
+    },
+    "comment" : {
+      "undefined" : "Maximum Bit Rate (MBR) for downlink traffic in a network configuration."
+    },
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "23",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/qos#5QI",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "5QI",
+      "undefined" : "5G QoS Identifier"
+    },
+    "comment" : {
+      "undefined" : "Refers to the duration of a session."
+    },
+    "id" : "25"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "26",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/qos#NetworkSlice",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NetworkSlice",
+      "undefined" : "Network Slice"
+    },
+    "comment" : {
+      "undefined" : "Network slice."
+    },
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#ApplicationServer",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ApplicationServer",
+      "undefined" : "Application Server"
+    },
+    "comment" : {
+      "undefined" : "Application server of a QoS session."
+    },
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#UserEquipment",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UserEquipment",
+      "undefined" : "User Equipment"
+    },
+    "comment" : {
+      "undefined" : "User equipment of a requested QoS session."
+    },
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#NetworkSliceType",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NetworkSliceType",
+      "undefined" : "Network Slice Type"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/candil/qos#NetworkSliceMedium",
+      "baseIri" : "https://w3id.org/candil/qos",
+      "labels" : {
+        "IRI-based" : "NetworkSliceMedium"
+      }
+    }, {
+      "iri" : "https://w3id.org/candil/qos#NetworkSliceLow",
+      "baseIri" : "https://w3id.org/candil/qos",
+      "labels" : {
+        "IRI-based" : "NetworkSliceLow"
+      }
+    }, {
+      "iri" : "https://w3id.org/candil/qos#NetworkSliceUltimate",
+      "baseIri" : "https://w3id.org/candil/qos",
+      "labels" : {
+        "IRI-based" : "NetworkSliceUltimate"
+      }
+    }, {
+      "iri" : "https://w3id.org/candil/qos#NetworkSliceHigh",
+      "baseIri" : "https://w3id.org/candil/qos",
+      "labels" : {
+        "IRI-based" : "NetworkSliceHigh"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "Type of network slice."
+    },
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#Session",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Session",
+      "undefined" : "Session"
+    },
+    "comment" : {
+      "undefined" : "QoS session."
+    },
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#QoSProfile",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QoSProfile",
+      "undefined" : "QoS Profile"
+    },
+    "comment" : {
+      "undefined" : "QoS profile a requested session."
+    },
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#NetworkProfile",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NetworkProfile",
+      "undefined" : "Network Profile"
+    },
+    "comment" : {
+      "undefined" : "Network profile."
+    },
+    "id" : "13"
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/candil/qos#assignedQosProfile",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "assignedQosProfile",
+      "undefined" : "assigned qos profile"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "Denotes the QoS Profile assigned to a given QoS session."
+    },
+    "attributes" : [ "object" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#applicationServer",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "applicationServer",
+      "undefined" : "application server"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "Refers to the application server requesting the QoS session."
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#duration",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "duration",
+      "undefined" : "duration"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "Refers to the duration of a session."
+    },
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#mapsToNetworkProfile",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "mapsToNetworkProfile",
+      "undefined" : "maps to network profile"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Refers to the network profiles that maps to a given QoS profile."
+    },
+    "attributes" : [ "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#usesNetworkProfile",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "usesNetworkProfile",
+      "undefined" : "uses network profile"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the network profile used a by given network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#networkSliceType",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "networkSliceType",
+      "undefined" : "network slice type"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the type of a network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://qudt.org/2.1/schema/qudt/unit",
+    "baseIri" : "http://qudt.org/2.1/schema/qudt",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "unit",
+      "undefined" : "unit"
+    },
+    "domain" : "10",
+    "attributes" : [ "external", "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#5qi",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "5qi",
+      "undefined" : "5qi"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the 5G QoS identifier used by a network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#mbrDownlink",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "mbrDownlink",
+      "undefined" : "mbr downlink"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the mbr for downlink of a network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#mbrUplink",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "mbrUplink",
+      "undefined" : "mbr uplink"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "Refers to the mbr for uplink of a network slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#ipAddress",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "ipAddress",
+      "undefined" : "ip address"
+    },
+    "domain" : "15",
+    "comment" : {
+      "undefined" : "IPv4 address."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://purl.org/dc/terms/identifier",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "identifier",
+      "undefined" : "identifier"
+    },
+    "domain" : "26",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#userEquipment",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "userEquipment",
+      "undefined" : "user equipment"
+    },
+    "domain" : "3",
+    "comment" : {
+      "undefined" : "Refers to the user equipment of a session."
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/candil/qos#scsAsId",
+    "baseIri" : "https://w3id.org/candil/qos",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "scsAsId",
+      "undefined" : "scs as id"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Identifier of the SCS/AS."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://qudt.org/2.1/schema/qudt/numericValue",
+    "baseIri" : "http://qudt.org/2.1/schema/qudt",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "numericValue",
+      "undefined" : "numeric value"
+    },
+    "domain" : "26",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "33"
+  } ]
+}
