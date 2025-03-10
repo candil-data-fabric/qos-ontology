@@ -1,0 +1,147 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cdqos: <https://w3id.org/candil/qos#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://6g-chronos.org/> .
+
+
+<ApplicationServer/192.168.0.1/24> a cdqos:ApplicationServer ;
+    cdqos:ipAddress "192.168.0.1/24" ;
+    cdqos:scsAsId "myNetapp" .
+
+<UserEquipment/10.0.0.1> a cdqos:UserEquipment ;
+    cdqos:ipAddress "10.0.0.1" .
+
+<Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace> a cdqos:Session ;
+    dcterms:identifier "ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace" ;
+    cdqos:userEquipment <UserEquipment/10.0.0.1> ;
+    cdqos:applicationServer <ApplicationServer/192.168.0.1/24> ;
+    cdqos:duration <Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration> ;
+    cdqos:assignedQoSProfile <QoSProfile/QOS_S> .
+
+<Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration> a cdqos:Duration ;
+    qudt:numericValue "100" ;
+    qudt:unit <http://qudt.org/vocab/unit/SEC> .
+
+<QoSProfile/QOS_S> a cdqos:QoSProfile ;
+    dcterms:identifier "QOS_S" ;
+    cdqos:mapsToNetworkProfile <NetworkProfile/1> .
+
+<NetworkProfile/1> a cdqos:NetworkProfile ;
+    dcterms:identifier "1" .
+
+<5QI/1> a cdqos:5QI ;
+    dcterms:identifier "1" .
+
+<5QI/2> a cdqos:5QI ;
+    dcterms:identifier "2" .
+
+<5QI/8> a cdqos:5QI ;
+    dcterms:identifier "8" .
+
+<5QI/27> a cdqos:5QI ;
+    dcterms:identifier "27" .
+
+<NetworkSlice/slice_medium_performance_2> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_2" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_2/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_2/MbrUplink> ;
+    cdqos:5qi <5QI/2> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_2/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_2/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "22" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_6> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_6" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_6/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_6/MbrUplink> ;
+    cdqos:5qi <5QI/27> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_6/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_6/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "25" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_10> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_10" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_10/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_10/MbrUplink> ;
+    cdqos:5qi <5QI/1> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_10/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_10/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "25" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_14> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_14" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_14/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_14/MbrUplink> ;
+    cdqos:5qi <5QI/8> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_14/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_14/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "25" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_18> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_18" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_18/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_18/MbrUplink> ;
+    cdqos:5qi <5QI/1> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_18/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_18/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "25" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_22> a cdqos:NetworkSlice ;
+    dcterms:identifier "slice_medium_performance_22" ;
+    cdqos:networkSliceType cdqos:NetworkSliceMedium ;
+    cdqos:mbrDownlink <NetworkSlice/slice_medium_performance_22/MbrDownlink> ;
+    cdqos:mbrUplink <NetworkSlice/slice_medium_performance_22/MbrUplink> ;
+    cdqos:5qi <5QI/8> ;
+    cdqos:usesNetworkProfile <NetworkProfile/1> .
+
+<NetworkSlice/slice_medium_performance_22/MbrDownlink> a cdqos:MbrDownlink ;
+    qudt:numericValue "55" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
+
+<NetworkSlice/slice_medium_performance_22/MbrUplink> a cdqos:MbrUplink ;
+    qudt:numericValue "25" ;
+    qudt:unit <http://qudt.org/vocab/unit/MegaBIT-PER-SEC> .
