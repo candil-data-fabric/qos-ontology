@@ -1,0 +1,127 @@
+{
+  "@context" : {
+    "Unit" : {
+      "@id" : "http://qudt.org/2.1/schema/qudt/Unit"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/elements/1.1/created"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "NetworkSliceType" : {
+      "@id" : "https://w3id.org/candil/qos#NetworkSliceType"
+    },
+    "NetworkSlice" : {
+      "@id" : "https://w3id.org/candil/qos#NetworkSlice"
+    },
+    "networkSliceType" : {
+      "@id" : "https://w3id.org/candil/qos#networkSliceType",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "numericValue" : {
+      "@id" : "http://qudt.org/2.1/schema/qudt/numericValue"
+    },
+    "QoSProfile" : {
+      "@id" : "https://w3id.org/candil/qos#QoSProfile"
+    },
+    "userEquipment" : {
+      "@id" : "https://w3id.org/candil/qos#userEquipment",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "mapsToNetworkProfile" : {
+      "@id" : "https://w3id.org/candil/qos#mapsToNetworkProfile",
+      "@type" : "@id"
+    },
+    "applicationServer" : {
+      "@id" : "https://w3id.org/candil/qos#applicationServer",
+      "@type" : "@id"
+    },
+    "QI" : {
+      "@id" : "https://w3id.org/candil/qos#5QI"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "createdWith" : {
+      "@id" : "https://w3id.org/mod#createdWith"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "scsAsId" : {
+      "@id" : "https://w3id.org/candil/qos#scsAsId"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "Duration" : {
+      "@id" : "https://w3id.org/candil/qos#Duration"
+    },
+    "duration" : {
+      "@id" : "https://w3id.org/candil/qos#duration",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher"
+    },
+    "assignedQosProfile" : {
+      "@id" : "https://w3id.org/candil/qos#assignedQosProfile",
+      "@type" : "@id"
+    },
+    "ApplicationServer" : {
+      "@id" : "https://w3id.org/candil/qos#ApplicationServer"
+    },
+    "unit" : {
+      "@id" : "http://qudt.org/2.1/schema/qudt/unit",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/elements/1.1/contributor"
+    },
+    "Session" : {
+      "@id" : "https://w3id.org/candil/qos#Session"
+    },
+    "usesNetworkProfile" : {
+      "@id" : "https://w3id.org/candil/qos#usesNetworkProfile",
+      "@type" : "@id"
+    },
+    "NetworkProfile" : {
+      "@id" : "https://w3id.org/candil/qos#NetworkProfile"
+    },
+    "ipAddress" : {
+      "@id" : "https://w3id.org/candil/qos#ipAddress"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "qi" : {
+      "@id" : "https://w3id.org/candil/qos#5qi",
+      "@type" : "@id"
+    },
+    "UserEquipment" : {
+      "@id" : "https://w3id.org/candil/qos#UserEquipment"
+    }
+  }
+}

@@ -1,0 +1,309 @@
+@prefix : <https://w3id.org/candil/qos#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cdqos: <https://w3id.org/candil/qos#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/candil/qos#> .
+
+<https://w3id.org/candil/qos#> rdf:type owl:Ontology ;
+                                dc:contributor "Riccardo Nicolicchia" ;
+                                dc:created "2025-03-10"^^xsd:date ;
+                                dc:creator "Ignacio Dominguez Martinez-Casanueva" ;
+                                dc:title "QoS Ontology" ;
+                                dcterms:license <http://purl.org/NET/rdflicense/APACHE2.0> ;
+                                dcterms:publisher [ foaf:homepage <https://github.com/candil-data-fabric> ;
+                                                    foaf:name "CANDIL Data Fabric"
+                                                  ] ;
+                                dcterms:source <https://github.com/candil-data-fabric/qos-ontology> ;
+                                vann:preferredNamespacePrefix "cdqos" ;
+                                vann:preferredNamespaceUri <https://w3id.org/candil/qos#> ;
+                                owl:versionInfo "1.0.0" ;
+                                mod:createdWith <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+mod:createdWith rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt/unit
+qudt:unit rdf:type owl:ObjectProperty ;
+          rdfs:range qudt:Unit ;
+          rdfs:label "unit" .
+
+
+###  https://w3id.org/candil/qos#applicationServer
+cdqos:applicationServer rdf:type owl:ObjectProperty ;
+                        rdfs:domain cdqos:Session ;
+                        rdfs:range cdqos:ApplicationServer ;
+                        rdfs:comment "Refers to the application server requesting the QoS session." ;
+                        rdfs:label "application server" .
+
+
+###  https://w3id.org/candil/qos#assignedQosProfile
+cdqos:assignedQosProfile rdf:type owl:ObjectProperty ;
+                         rdfs:domain cdqos:Session ;
+                         rdfs:range cdqos:QoSProfile ;
+                         rdfs:comment "Denotes the QoS Profile assigned to a given QoS session." ;
+                         rdfs:label "assigned qos profile" .
+
+
+###  https://w3id.org/candil/qos#duration
+cdqos:duration rdf:type owl:ObjectProperty ;
+               rdfs:domain cdqos:Session ;
+               rdfs:range cdqos:Duration ;
+               rdfs:comment "Refers to the duration of a session." ;
+               rdfs:label "duration" .
+
+
+###  https://w3id.org/candil/qos#mapsToNetworkProfile
+cdqos:mapsToNetworkProfile rdf:type owl:ObjectProperty ;
+                           rdfs:domain cdqos:QoSProfile ;
+                           rdfs:range cdqos:NetworkProfile ;
+                           rdfs:comment "Refers to the network profiles that maps to a given QoS profile." ;
+                           rdfs:label "maps to network profile" .
+
+
+###  https://w3id.org/candil/qos#mbrDownlink
+cdqos:mbrDownlink rdf:type owl:ObjectProperty ;
+                  rdfs:domain cdqos:NetworkSlice ;
+                  rdfs:range cdqos:MbrDownlink ;
+                  rdfs:comment "Refers to the mbr for downlink of a network slice." ;
+                  rdfs:label "mbr downlink" .
+
+
+###  https://w3id.org/candil/qos#mbrUplink
+cdqos:mbrUplink rdf:type owl:ObjectProperty ;
+                rdfs:domain cdqos:NetworkSlice ;
+                rdfs:range cdqos:MbrUplink ;
+                rdfs:comment "Refers to the mbr for uplink of a network slice." ;
+                rdfs:label "mbr uplink" .
+
+
+###  https://w3id.org/candil/qos#networkSliceType
+cdqos:networkSliceType rdf:type owl:ObjectProperty ;
+                       rdfs:domain cdqos:NetworkSlice ;
+                       rdfs:range cdqos:NetworkSliceType ;
+                       rdfs:comment "Refers to the type of a network slice." ;
+                       rdfs:label "network slice type" .
+
+
+###  https://w3id.org/candil/qos#userEquipment
+cdqos:userEquipment rdf:type owl:ObjectProperty ;
+                    rdfs:domain cdqos:Session ;
+                    rdfs:range cdqos:UserEquipment ;
+                    rdfs:comment "Refers to the user equipment of a session." ;
+                    rdfs:label "user equipment" .
+
+
+###  https://w3id.org/candil/qos#usesNetworkProfile
+cdqos:usesNetworkProfile rdf:type owl:ObjectProperty ;
+                         rdfs:domain cdqos:NetworkSlice ;
+                         rdfs:range cdqos:NetworkProfile ;
+                         rdfs:comment "Refers to the network profile used a by given network slice." ;
+                         rdfs:label "uses network profile" .
+
+
+###  https://w3id.org/candil/qos#5qi
+cdqos:5qi rdf:type owl:ObjectProperty ;
+          rdfs:domain cdqos:NetworkSlice ;
+          rdfs:range cdqos:5QI ;
+          rdfs:comment "Refers to the 5G QoS identifier used by a network slice." ;
+          rdfs:label "5qi" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:DatatypeProperty ;
+                   rdfs:label "identifier" .
+
+
+###  http://qudt.org/2.1/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:DatatypeProperty ;
+                  rdfs:label "numeric value" .
+
+
+###  https://w3id.org/candil/qos#ipAddress
+cdqos:ipAddress rdf:type owl:DatatypeProperty ;
+                rdfs:domain cdqos:ApplicationServer ,
+                            cdqos:UserEquipment ;
+                rdfs:comment "IPv4 address." ;
+                rdfs:label "ip address" .
+
+
+###  https://w3id.org/candil/qos#scsAsId
+cdqos:scsAsId rdf:type owl:DatatypeProperty ;
+              rdfs:domain cdqos:ApplicationServer ;
+              rdfs:comment "Identifier of the SCS/AS." ;
+              rdfs:label "scs as id" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class ;
+          rdfs:label "Unit" .
+
+
+###  https://w3id.org/candil/qos#ApplicationServer
+cdqos:ApplicationServer rdf:type owl:Class ;
+                        rdfs:comment "Application server of a QoS session." ;
+                        rdfs:label "Application Server" .
+
+
+###  https://w3id.org/candil/qos#Duration
+cdqos:Duration rdf:type owl:Class ;
+               rdfs:comment "Duration of the requested QoS session." ;
+               rdfs:label "Duration" .
+
+
+###  https://w3id.org/candil/qos#MbrDownlink
+cdqos:MbrDownlink rdf:type owl:Class ;
+                  rdfs:comment "Maximum Bit Rate (MBR) for downlink traffic in a network configuration." ;
+                  rdfs:label "Maximum Bit Rate Downlink" .
+
+
+###  https://w3id.org/candil/qos#MbrUplink
+cdqos:MbrUplink rdf:type owl:Class ;
+                rdfs:comment "Maximum Bit Rate (MBR) for uplink traffic in a network configuration." ;
+                rdfs:label "Maximum Bit Rate Uplink" .
+
+
+###  https://w3id.org/candil/qos#NetworkProfile
+cdqos:NetworkProfile rdf:type owl:Class ;
+                     rdfs:comment "Network profile." ;
+                     rdfs:label "Network Profile" .
+
+
+###  https://w3id.org/candil/qos#NetworkSlice
+cdqos:NetworkSlice rdf:type owl:Class ;
+                   rdfs:comment "Network slice." ;
+                   rdfs:label "Network Slice" .
+
+
+###  https://w3id.org/candil/qos#NetworkSliceType
+cdqos:NetworkSliceType rdf:type owl:Class ;
+                       rdfs:comment "Type of network slice." ;
+                       rdfs:label "Network Slice Type" .
+
+
+###  https://w3id.org/candil/qos#QoSProfile
+cdqos:QoSProfile rdf:type owl:Class ;
+                 rdfs:comment "QoS profile a requested session." ;
+                 rdfs:label "QoS Profile" .
+
+
+###  https://w3id.org/candil/qos#Session
+cdqos:Session rdf:type owl:Class ;
+              rdfs:comment "QoS session." ;
+              rdfs:label "Session" .
+
+
+###  https://w3id.org/candil/qos#UserEquipment
+cdqos:UserEquipment rdf:type owl:Class ;
+                    rdfs:comment "User equipment of a requested QoS session." ;
+                    rdfs:label "User Equipment" .
+
+
+###  https://w3id.org/candil/qos#5QI
+cdqos:5QI rdf:type owl:Class ;
+          rdfs:comment "Refers to the duration of a session." ;
+          rdfs:label "5G QoS Identifier" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/candil/qos#NetworkSliceHigh
+cdqos:NetworkSliceHigh rdf:type owl:NamedIndividual ,
+                                cdqos:NetworkSliceType .
+
+
+###  https://w3id.org/candil/qos#NetworkSliceLow
+cdqos:NetworkSliceLow rdf:type owl:NamedIndividual ,
+                               cdqos:NetworkSliceType .
+
+
+###  https://w3id.org/candil/qos#NetworkSliceMedium
+cdqos:NetworkSliceMedium rdf:type owl:NamedIndividual ,
+                                  cdqos:NetworkSliceType .
+
+
+###  https://w3id.org/candil/qos#NetworkSliceUltimate
+cdqos:NetworkSliceUltimate rdf:type owl:NamedIndividual ,
+                                    cdqos:NetworkSliceType .
+
+
+[ foaf:homepage <https://github.com/candil-data-fabric> ;
+  foaf:name "CANDIL Data Fabric"
+] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
