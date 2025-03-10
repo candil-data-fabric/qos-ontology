@@ -1,0 +1,12 @@
+Id,Competency Question/Fact
+F1,"A network slice can be one these types: low, medium, high, ultimate"
+CQ1,What is the application server of the qos session?
+CQ2,What is the IPv4 and scsAsId of the application server?
+CQ3,What is the duration of the qos session?
+CQ4,What is the user equipment of the qos session?
+CQ5,Which qos profile was assigned to the qos session?
+CQ6,Which network profile maps to the qos profile?
+CQ7,Which network profile is used by the network slice?
+CQ8,Which 5QI are mapped to the network profile?
+CQ9,What is the MBR downlink of a network slice?
+CQ10,What is the MBR uplink of a network slice?
