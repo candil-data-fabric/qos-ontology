@@ -21,11 +21,11 @@ The following diagrams shows the classes and properties defined in the ontology.
 
 ### Ontology Code (OWL)
 
-The OWL code of the ontology, serialized in Turtle format, is available [here](./ontology/qos.ttl).
+The OWL code of the ontology, serialized in Turtle format, is available [here](./ontology/ontology.ttl).
 
 ### Examples
 
-Sample RDF datasets are provided in the [examples folder](./examples/).
+Sample RDF datasets are provided in the [examples folder](./examples/rdf/).
 
 ### Evaluation
 
