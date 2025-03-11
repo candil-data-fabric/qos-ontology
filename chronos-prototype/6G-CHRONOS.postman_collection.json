@@ -1,0 +1,1605 @@
+{
+	"info": {
+		"_postman_id": "7ddea485-a5a0-475a-8a99-c973def04095",
+		"name": "6G-CHRONOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21273335"
+	},
+	"item": [
+		{
+			"name": "0. Init",
+			"item": [
+				{
+					"name": "Load entities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Link",
+								"value": "<uri>",
+								"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n",
+								"disabled": true
+							},
+							{
+								"key": "NGSILD-Tenant",
+								"value": "<string>",
+								"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": \"https://6g-chronos.org/UserEquipment/10.0.0.1\",\n        \"type\": \"https://w3id.org/candil/qos#UserEquipment\",\n        \"https://w3id.org/candil/qos#ipAddress\": {\n            \"type\": \"Property\",\n            \"value\": \"10.0.0.1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_14\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_14\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/8\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"25\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"25\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/5QI/27\",\n        \"type\": \"https://w3id.org/candil/qos#5QI\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"27\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_10\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_10\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/1\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_22\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_22\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/8\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_2\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_2\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/2\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/5QI/2\",\n        \"type\": \"https://w3id.org/candil/qos#5QI\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"2\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"25\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_18\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_18\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/1\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_6\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkSlice\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"slice_medium_performance_6\"\n        },\n        \"https://w3id.org/candil/qos#networkSliceType\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://w3id.org/candil/qos#NetworkSliceMedium\"\n        },\n        \"https://w3id.org/candil/qos#mbrDownlink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrDownlink\"\n        },\n        \"https://w3id.org/candil/qos#mbrUplink\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrUplink\"\n        },\n        \"https://w3id.org/candil/qos#5qi\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/5QI/27\"\n        },\n        \"https://w3id.org/candil/qos#usesNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/ApplicationServer/192.168.0.1/24\",\n        \"type\": \"https://w3id.org/candil/qos#ApplicationServer\",\n        \"https://w3id.org/candil/qos#ipAddress\": {\n            \"type\": \"Property\",\n            \"value\": \"192.168.0.1/24\"\n        },\n        \"https://w3id.org/candil/qos#scsAsId\": {\n            \"type\": \"Property\",\n            \"value\": \"myNetapp\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"22\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrDownlink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrDownlink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"55\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"25\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrUplink\",\n        \"type\": \"https://w3id.org/candil/qos#MbrUplink\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"25\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/MegaBIT-PER-SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration\",\n        \"type\": \"https://w3id.org/candil/qos#Duration\",\n        \"http://qudt.org/2.1/schema/qudt/numericValue\": {\n            \"type\": \"Property\",\n            \"value\": \"100\"\n        },\n        \"http://qudt.org/2.1/schema/qudt/unit\": {\n            \"type\": \"Relationship\",\n            \"object\": \"http://qudt.org/vocab/unit/SEC\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace\",\n        \"type\": \"https://w3id.org/candil/qos#Session\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace\"\n        },\n        \"https://w3id.org/candil/qos#userEquipment\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/UserEquipment/10.0.0.1\"\n        },\n        \"https://w3id.org/candil/qos#applicationServer\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/ApplicationServer/192.168.0.1/24\"\n        },\n        \"https://w3id.org/candil/qos#duration\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration\"\n        },\n        \"https://w3id.org/candil/qos#assignedQoSProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/QoSProfile/QOS_S\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/NetworkProfile/1\",\n        \"type\": \"https://w3id.org/candil/qos#NetworkProfile\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/5QI/8\",\n        \"type\": \"https://w3id.org/candil/qos#5QI\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"8\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/QoSProfile/QOS_S\",\n        \"type\": \"https://w3id.org/candil/qos#QoSProfile\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"QOS_S\"\n        },\n        \"https://w3id.org/candil/qos#mapsToNetworkProfile\": {\n            \"type\": \"Relationship\",\n            \"object\": \"https://6g-chronos.org/NetworkProfile/1\"\n        }\n    },\n    {\n        \"id\": \"https://6g-chronos.org/5QI/1\",\n        \"type\": \"https://w3id.org/candil/qos#5QI\",\n        \"http://purl.org/dc/terms/identifier\": {\n            \"type\": \"Property\",\n            \"value\": \"1\"\n        }\n    }\n]\n",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/entityOperations/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entityOperations",
+								"create"
+							]
+						},
+						"description": "5.6.7 Batch Entity Creation.\n\nThis operation allows creating a batch of NGSI-LD Entities.\n"
+					},
+					"response": [
+						{
+							"name": "If all entities have been successfully created, an array of Strings containing URIs\nis returned in the response. Each URI represents the Entity Id of a created entity.\nThere is no restriction as to the order of the Entity Ids.\n",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entityOperations/create?local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entityOperations",
+										"create"
+									],
+									"query": [
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n  \"<string>\",\n  \"<string>\"\n]"
+						},
+						{
+							"name": "If the entity input data matches to a registration, the relevant parts of the request are forwarded\nas a distributed operation. In the case when an error response is received back from any distributed\noperation, a response body containing the result retur",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entityOperations/create?local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entityOperations",
+										"create"
+									],
+									"query": [
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Multi-Status (WebDAV) (RFC 4918)",
+							"code": 207,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"success\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"errors\": [\n    {\n      \"entityId\": \"<uri>\",\n      \"error\": {\n        \"status\": \"<integer>\",\n        \"detail\": \"<string>\",\n        \"type\": \"<string>\",\n        \"title\": \"<string>\",\n        \"instance\": \"<string>\"\n      },\n      \"registrationId\": \"<uri>\"\n    },\n    {\n      \"entityId\": \"<uri>\",\n      \"error\": {\n        \"status\": \"<integer>\",\n        \"detail\": \"<string>\",\n        \"type\": \"<string>\",\n        \"title\": \"<string>\",\n        \"instance\": \"<string>\"\n      },\n      \"registrationId\": \"<uri>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "It is used to indicate that the request or its content is incorrect,\nsee clause 6.3.2. In the returned ProblemDetails structure, the \"detail\"\nattribute should convey more information about the error.\n",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/entityOperations/create?local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entityOperations",
+										"create"
+									],
+									"query": [
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Link",
+								"value": "<https://raw.githubusercontent.com/candil-data-fabric/qos-ontology/refs/heads/develop/ontology/context.jsonld>",
+								"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+							},
+							{
+								"key": "NGSILD-Tenant",
+								"value": "<string>",
+								"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities?type=Session",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Session"
+								}
+							]
+						},
+						"description": "5.7.2 Query Entities (excluding batch entity queries).\n\nThis operation allows querying an NGSI-LD system.\n"
+					},
+					"response": [
+						{
+							"name": "A response body containing the query result as a list of entities, unless the Accept Header\nindicates that the Entities are to be rendered as GeoJSON.\n\nIf the Accept Header indicates that the Entities are to be rendered as GeoJSON, a response body\ncontain",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Results-Count",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Warning",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]"
+						},
+						{
+							"name": "It is used to indicate that the request or its content is incorrect,\nsee clause 6.3.2. In the returned ProblemDetails structure, the \"detail\"\nattribute should convey more information about the error.\n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "1. App Server",
+			"item": [
+				{
+					"name": "Get scsAsId of AppServer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Link",
+								"value": "<https://raw.githubusercontent.com/candil-data-fabric/qos-ontology/refs/heads/develop/ontology/context.jsonld>",
+								"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+							},
+							{
+								"key": "NGSILD-Tenant",
+								"value": "<string>",
+								"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities?type=ApplicationServer&q=ipAddress==\"192.168.0.1/24\"&attrs=scsAsId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "ApplicationServer"
+								},
+								{
+									"key": "q",
+									"value": "ipAddress==\"192.168.0.1/24\""
+								},
+								{
+									"key": "attrs",
+									"value": "scsAsId"
+								}
+							]
+						},
+						"description": "5.7.2 Query Entities (excluding batch entity queries).\n\nThis operation allows querying an NGSI-LD system.\n"
+					},
+					"response": [
+						{
+							"name": "A response body containing the query result as a list of entities, unless the Accept Header\nindicates that the Entities are to be rendered as GeoJSON.\n\nIf the Accept Header indicates that the Entities are to be rendered as GeoJSON, a response body\ncontain",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Results-Count",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Warning",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]"
+						},
+						{
+							"name": "It is used to indicate that the request or its content is incorrect,\nsee clause 6.3.2. In the returned ProblemDetails structure, the \"detail\"\nattribute should convey more information about the error.\n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2. Network Slices",
+			"item": [
+				{
+					"name": "Get QoS Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Link",
+								"value": "<https://raw.githubusercontent.com/candil-data-fabric/qos-ontology/refs/heads/develop/ontology/context.jsonld>",
+								"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+							},
+							{
+								"key": "NGSILD-Tenant",
+								"value": "<string>",
+								"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities?type=NetworkSlice&q=usesNetworkProfile==\"https://6g-chronos.org/NetworkProfile/1\"",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "NetworkSlice"
+								},
+								{
+									"key": "q",
+									"value": "usesNetworkProfile==\"https://6g-chronos.org/NetworkProfile/1\""
+								}
+							]
+						},
+						"description": "5.7.2 Query Entities (excluding batch entity queries).\n\nThis operation allows querying an NGSI-LD system.\n"
+					},
+					"response": [
+						{
+							"name": "A response body containing the query result as a list of entities, unless the Accept Header\nindicates that the Entities are to be rendered as GeoJSON.\n\nIf the Accept Header indicates that the Entities are to be rendered as GeoJSON, a response body\ncontain",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Results-Count",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Warning",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]"
+						},
+						{
+							"name": "It is used to indicate that the request or its content is incorrect,\nsee clause 6.3.2. In the returned ProblemDetails structure, the \"detail\"\nattribute should convey more information about the error.\n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Network Slices for network profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Link",
+								"value": "<https://raw.githubusercontent.com/candil-data-fabric/qos-ontology/refs/heads/develop/ontology/context.jsonld>",
+								"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+							},
+							{
+								"key": "NGSILD-Tenant",
+								"value": "<string>",
+								"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities?id=https://6g-chronos.org/QoSProfile/QOS_S",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "https://6g-chronos.org/QoSProfile/QOS_S"
+								}
+							]
+						},
+						"description": "5.7.2 Query Entities (excluding batch entity queries).\n\nThis operation allows querying an NGSI-LD system.\n"
+					},
+					"response": [
+						{
+							"name": "A response body containing the query result as a list of entities, unless the Accept Header\nindicates that the Entities are to be rendered as GeoJSON.\n\nIf the Accept Header indicates that the Entities are to be rendered as GeoJSON, a response body\ncontain",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Results-Count",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								},
+								{
+									"key": "NGSILD-Warning",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  },\n  {\n    \"id\": \"<uri>\",\n    \"type\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"location\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"observationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"operationSpace\": {\n      \"type\": \"GeoProperty\",\n      \"value\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"datasetId\": \"<uri>\"\n    },\n    \"createdAt\": \"<dateTime>\",\n    \"modifiedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\",\n    \"additionalProperties\": {\n      \"type\": \"Property\",\n      \"value\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"previousValue\": {\n        \"description\": \"Any JSON value as defined by IETF RFC 8259.\"\n      },\n      \"observedAt\": \"<dateTime>\",\n      \"unitCode\": \"<string>\",\n      \"datasetId\": \"<uri>\",\n      \"createdAt\": \"<dateTime>\",\n      \"modifiedAt\": \"<dateTime>\",\n      \"deletedAt\": \"<dateTime>\"\n    }\n  }\n]"
+						},
+						{
+							"name": "It is used to indicate that the request or its content is incorrect,\nsee clause 6.3.2. In the returned ProblemDetails structure, the \"detail\"\nattribute should convey more information about the error.\n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Link",
+										"value": "<uri>",
+										"description": "6.3.5 JSON-LD @context resolution\n\nIn summary, from a developer's perspective, for POST, PATCH and PUT operations,\nif MIME type is \"application/ld+json\", then the associated @context shall be provided\nonly as part of the request payload body. Likewise, if MIME type is \"application/json\",\nthen the associated @context shall be provided only by using the JSON- LD Link header.\nNo mixes are allowed, i.e. mixing options shall result in HTTP response errors.\nImplementations should provide descriptive error messages when these situations arise.\n\nIn contrast, GET and DELETE operations always take their input @context from the JSON-LD Link Header.\n"
+									},
+									{
+										"key": "NGSILD-Tenant",
+										"value": "<string>",
+										"description": "6.3.14 Tenant specification. The tenant to which the NGSI-LD HTTP operation is targeted.\n"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/entities?id=<uri>,<uri>&type=<string>&idPattern=<string>&attrs=<uri>,<uri>&q=<string>&csf=<string>&geometry=Polygon&georel=intersects&coordinates=<number>&geoproperty=location&geometryProperty=<string>&lang=<string>&scopeQ=<string>&limit=<integer>&count=<boolean>&options=concise,normalized&local=<boolean>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uri>,<uri>",
+											"description": "List of entity ids to be retrieved."
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Selection of Entity Types as per clause 4.17.\n"
+										},
+										{
+											"key": "idPattern",
+											"value": "<string>",
+											"description": "Regular expression that shall be matched by entity ids."
+										},
+										{
+											"key": "attrs",
+											"value": "<uri>,<uri>",
+											"description": "List of Attributes to be matched by the Entity and included in the response. If the Entity does not\nhave any of the Attributes in attrs, then a 404 Not Found shall be retrieved. If attrs is not\nspecified, no matching is performed and all Attributes related to the Entity shall be retrieved.\n"
+										},
+										{
+											"key": "q",
+											"value": "<string>",
+											"description": "Query as per clause 4.9.\n"
+										},
+										{
+											"key": "csf",
+											"value": "<string>",
+											"description": "Context Source filter as per clause 4.9."
+										},
+										{
+											"key": "geometry",
+											"value": "Polygon",
+											"description": "Geometry as per clause 4.10. It is part of geoquery. It shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "georel",
+											"value": "intersects",
+											"description": "Geo relationship as per clause 4.10. It is part of geoquery. It shall be one if\ngeometry or georel are present.\n"
+										},
+										{
+											"key": "coordinates",
+											"value": "<number>",
+											"description": "Coordinates serialized as a string as per clause 4.10. It is part of geoquery.\nIt shall be one if geometry or georel are present.\n"
+										},
+										{
+											"key": "geoproperty",
+											"value": "location",
+											"description": "The name of the Property that contains the geospatial data that will be used to resolve the geoquery.\nBy default, will be location (see clause 4.7). It shall be ignored unless a geoquery is present.\n"
+										},
+										{
+											"key": "geometryProperty",
+											"value": "<string>",
+											"description": "In the case of GeoJSON Entity representation, this parameter indicates which GeoProperty to use\nfor the toplevel geometry field.\n"
+										},
+										{
+											"key": "lang",
+											"value": "<string>",
+											"description": "It is used to reduce languageMaps to a string or string array property in a single preferred language.\n"
+										},
+										{
+											"key": "scopeQ",
+											"value": "<string>",
+											"description": "Scope query (see clause 4.19).\n"
+										},
+										{
+											"key": "limit",
+											"value": "<integer>",
+											"description": "6.3.10 Pagination behaviour. It defines the limit to the number of NGSI-LD Elements that shall be retrieved\nat a maximum as mandated by clause 5.5.9. The value 0 is only allowed in combination with\nthe count URI parameter.\n"
+										},
+										{
+											"key": "count",
+											"value": "<boolean>",
+											"description": "6.3.13 Counting number of results. If true, then a special HTTP header (NGSILD-Results-Count) is set in\nthe response. Regardless of how many entities are actually returned (maybe due to the \"limit\" URI parameter),\nthe total number of matching results (e.g. number of Entities) is returned.\n"
+										},
+										{
+											"key": "options",
+											"value": "concise,normalized"
+										},
+										{
+											"key": "local",
+											"value": "<boolean>",
+											"description": "6.3.18 Limiting Distributed Operations. If local=true then no Context Source Registrations shall be\nconsidered as matching to avoid cascading distributed operations (see clause 4.3.6.4).\n"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "NGSILD-Tenant",
+									"value": "",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:1026/ngsi-ld/v1",
+			"type": "string"
+		}
+	]
+}
