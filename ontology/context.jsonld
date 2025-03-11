@@ -53,7 +53,7 @@
       "@id" : "https://w3id.org/candil/qos#applicationServer",
       "@type" : "@id"
     },
-    "QI" : {
+    "5QI" : {
       "@id" : "https://w3id.org/candil/qos#5QI"
     },
     "creator" : {
@@ -130,7 +130,7 @@
     "preferredNamespaceUri" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
     },
-    "qi" : {
+    "5qi" : {
       "@id" : "https://w3id.org/candil/qos#5qi",
       "@type" : "@id"
     },
