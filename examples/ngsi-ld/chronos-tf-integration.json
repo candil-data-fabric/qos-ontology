@@ -1,5 +1,13 @@
 [
     {
+        "id": "https://6g-chronos.org/UserEquipment/10.0.0.1",
+        "type": "https://w3id.org/candil/qos#UserEquipment",
+        "https://w3id.org/candil/qos#ipAddress": {
+            "type": "Property",
+            "value": "10.0.0.1"
+        }
+    },
+    {
         "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrDownlink",
         "type": "https://w3id.org/candil/qos#MbrDownlink",
         "http://qudt.org/2.1/schema/qudt/numericValue": {
@@ -40,11 +48,55 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18",
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink",
+        "type": "https://w3id.org/candil/qos#MbrDownlink",
+        "http://qudt.org/2.1/schema/qudt/numericValue": {
+            "type": "Property",
+            "value": "55"
+        },
+        "http://qudt.org/2.1/schema/qudt/unit": {
+            "type": "Relationship",
+            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrUplink",
+        "type": "https://w3id.org/candil/qos#MbrUplink",
+        "http://qudt.org/2.1/schema/qudt/numericValue": {
+            "type": "Property",
+            "value": "25"
+        },
+        "http://qudt.org/2.1/schema/qudt/unit": {
+            "type": "Relationship",
+            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrUplink",
+        "type": "https://w3id.org/candil/qos#MbrUplink",
+        "http://qudt.org/2.1/schema/qudt/numericValue": {
+            "type": "Property",
+            "value": "25"
+        },
+        "http://qudt.org/2.1/schema/qudt/unit": {
+            "type": "Relationship",
+            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/5QI/27",
+        "type": "https://w3id.org/candil/qos#5QI",
+        "http://purl.org/dc/terms/identifier": {
+            "type": "Property",
+            "value": "27"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10",
         "type": "https://w3id.org/candil/qos#NetworkSlice",
         "http://purl.org/dc/terms/identifier": {
             "type": "Property",
-            "value": "slice_medium_performance_18"
+            "value": "slice_medium_performance_10"
         },
         "https://w3id.org/candil/qos#networkSliceType": {
             "type": "Relationship",
@@ -52,15 +104,43 @@
         },
         "https://w3id.org/candil/qos#mbrDownlink": {
             "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrDownlink"
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink"
         },
         "https://w3id.org/candil/qos#mbrUplink": {
             "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrUplink"
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrUplink"
         },
         "https://w3id.org/candil/qos#5qi": {
             "type": "Relationship",
             "object": "https://6g-chronos.org/5QI/1"
+        },
+        "https://w3id.org/candil/qos#usesNetworkProfile": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkProfile/1"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22",
+        "type": "https://w3id.org/candil/qos#NetworkSlice",
+        "http://purl.org/dc/terms/identifier": {
+            "type": "Property",
+            "value": "slice_medium_performance_22"
+        },
+        "https://w3id.org/candil/qos#networkSliceType": {
+            "type": "Relationship",
+            "object": "https://w3id.org/candil/qos#NetworkSliceMedium"
+        },
+        "https://w3id.org/candil/qos#mbrDownlink": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink"
+        },
+        "https://w3id.org/candil/qos#mbrUplink": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrUplink"
+        },
+        "https://w3id.org/candil/qos#5qi": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/5QI/8"
         },
         "https://w3id.org/candil/qos#usesNetworkProfile": {
             "type": "Relationship",
@@ -96,91 +176,11 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrUplink",
-        "type": "https://w3id.org/candil/qos#MbrUplink",
-        "http://qudt.org/2.1/schema/qudt/numericValue": {
-            "type": "Property",
-            "value": "25"
-        },
-        "http://qudt.org/2.1/schema/qudt/unit": {
-            "type": "Relationship",
-            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22",
-        "type": "https://w3id.org/candil/qos#NetworkSlice",
+        "id": "https://6g-chronos.org/5QI/2",
+        "type": "https://w3id.org/candil/qos#5QI",
         "http://purl.org/dc/terms/identifier": {
             "type": "Property",
-            "value": "slice_medium_performance_22"
-        },
-        "https://w3id.org/candil/qos#networkSliceType": {
-            "type": "Relationship",
-            "object": "https://w3id.org/candil/qos#NetworkSliceMedium"
-        },
-        "https://w3id.org/candil/qos#mbrDownlink": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink"
-        },
-        "https://w3id.org/candil/qos#mbrUplink": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrUplink"
-        },
-        "https://w3id.org/candil/qos#5qi": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/5QI/8"
-        },
-        "https://w3id.org/candil/qos#usesNetworkProfile": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkProfile/1"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink",
-        "type": "https://w3id.org/candil/qos#MbrDownlink",
-        "http://qudt.org/2.1/schema/qudt/numericValue": {
-            "type": "Property",
-            "value": "55"
-        },
-        "http://qudt.org/2.1/schema/qudt/unit": {
-            "type": "Relationship",
-            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration",
-        "type": "https://w3id.org/candil/qos#Duration",
-        "http://qudt.org/2.1/schema/qudt/numericValue": {
-            "type": "Property",
-            "value": "100"
-        },
-        "http://qudt.org/2.1/schema/qudt/unit": {
-            "type": "Relationship",
-            "object": "http://qudt.org/vocab/unit/SEC"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace",
-        "type": "https://w3id.org/candil/qos#UserEquipment",
-        "http://purl.org/dc/terms/identifier": {
-            "type": "Property",
-            "value": "ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace"
-        },
-        "https://w3id.org/candil/qos#userEquipment": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/UserEquipment/10.0.0.1"
-        },
-        "https://w3id.org/candil/qos#applicationServer": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/ApplicationServer/192.168.0.1/24"
-        },
-        "https://w3id.org/candil/qos#duration": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration"
-        },
-        "https://w3id.org/candil/qos#assignedQoSProfile": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/QoSProfile/QOS_S"
+            "value": "2"
         }
     },
     {
@@ -196,15 +196,55 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrUplink",
-        "type": "https://w3id.org/candil/qos#MbrUplink",
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_22/MbrDownlink",
+        "type": "https://w3id.org/candil/qos#MbrDownlink",
         "http://qudt.org/2.1/schema/qudt/numericValue": {
             "type": "Property",
-            "value": "22"
+            "value": "55"
         },
         "http://qudt.org/2.1/schema/qudt/unit": {
             "type": "Relationship",
             "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrDownlink",
+        "type": "https://w3id.org/candil/qos#MbrDownlink",
+        "http://qudt.org/2.1/schema/qudt/numericValue": {
+            "type": "Property",
+            "value": "55"
+        },
+        "http://qudt.org/2.1/schema/qudt/unit": {
+            "type": "Relationship",
+            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18",
+        "type": "https://w3id.org/candil/qos#NetworkSlice",
+        "http://purl.org/dc/terms/identifier": {
+            "type": "Property",
+            "value": "slice_medium_performance_18"
+        },
+        "https://w3id.org/candil/qos#networkSliceType": {
+            "type": "Relationship",
+            "object": "https://w3id.org/candil/qos#NetworkSliceMedium"
+        },
+        "https://w3id.org/candil/qos#mbrDownlink": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrDownlink"
+        },
+        "https://w3id.org/candil/qos#mbrUplink": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_18/MbrUplink"
+        },
+        "https://w3id.org/candil/qos#5qi": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/5QI/1"
+        },
+        "https://w3id.org/candil/qos#usesNetworkProfile": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkProfile/1"
         }
     },
     {
@@ -236,15 +276,7 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/5QI/27",
-        "type": "https://w3id.org/candil/qos#5QI",
-        "http://purl.org/dc/terms/identifier": {
-            "type": "Property",
-            "value": "27"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink",
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrDownlink",
         "type": "https://w3id.org/candil/qos#MbrDownlink",
         "http://qudt.org/2.1/schema/qudt/numericValue": {
             "type": "Property",
@@ -256,47 +288,27 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_6/MbrUplink",
+        "id": "https://6g-chronos.org/ApplicationServer/192.168.0.1/24",
+        "type": "https://w3id.org/candil/qos#ApplicationServer",
+        "https://w3id.org/candil/qos#ipAddress": {
+            "type": "Property",
+            "value": "192.168.0.1/24"
+        },
+        "https://w3id.org/candil/qos#scsAsId": {
+            "type": "Property",
+            "value": "myNetapp"
+        }
+    },
+    {
+        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrUplink",
         "type": "https://w3id.org/candil/qos#MbrUplink",
         "http://qudt.org/2.1/schema/qudt/numericValue": {
             "type": "Property",
-            "value": "25"
+            "value": "22"
         },
         "http://qudt.org/2.1/schema/qudt/unit": {
             "type": "Relationship",
             "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/QoSProfile/QOS_S",
-        "type": "https://w3id.org/candil/qos#QoSProfile",
-        "http://purl.org/dc/terms/identifier": {
-            "type": "Property",
-            "value": "QOS_S"
-        },
-        "https://w3id.org/candil/qos#mapsToNetworkProfile": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkProfile/1"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_14/MbrDownlink",
-        "type": "https://w3id.org/candil/qos#MbrDownlink",
-        "http://qudt.org/2.1/schema/qudt/numericValue": {
-            "type": "Property",
-            "value": "55"
-        },
-        "http://qudt.org/2.1/schema/qudt/unit": {
-            "type": "Relationship",
-            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/5QI/2",
-        "type": "https://w3id.org/candil/qos#5QI",
-        "http://purl.org/dc/terms/identifier": {
-            "type": "Property",
-            "value": "2"
         }
     },
     {
@@ -336,23 +348,39 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_2/MbrDownlink",
-        "type": "https://w3id.org/candil/qos#MbrDownlink",
+        "id": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration",
+        "type": "https://w3id.org/candil/qos#Duration",
         "http://qudt.org/2.1/schema/qudt/numericValue": {
             "type": "Property",
-            "value": "55"
+            "value": "100"
         },
         "http://qudt.org/2.1/schema/qudt/unit": {
             "type": "Relationship",
-            "object": "http://qudt.org/vocab/unit/MegaBIT-PER-SEC"
+            "object": "http://qudt.org/vocab/unit/SEC"
         }
     },
     {
-        "id": "https://6g-chronos.org/ApplicationServer/192.168.0.1/24",
-        "type": "https://w3id.org/candil/qos#ApplicationServer",
-        "https://w3id.org/candil/qos#ipAddress": {
+        "id": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace",
+        "type": "https://w3id.org/candil/qos#Session",
+        "http://purl.org/dc/terms/identifier": {
             "type": "Property",
-            "value": "192.168.0.1/24"
+            "value": "ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace"
+        },
+        "https://w3id.org/candil/qos#userEquipment": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/UserEquipment/10.0.0.1"
+        },
+        "https://w3id.org/candil/qos#applicationServer": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/ApplicationServer/192.168.0.1/24"
+        },
+        "https://w3id.org/candil/qos#duration": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/Session/ceb5e725-d8f6-4eb7-abba-a5ce2ce60ace/Duration"
+        },
+        "https://w3id.org/candil/qos#assignedQoSProfile": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/QoSProfile/QOS_S"
         }
     },
     {
@@ -364,34 +392,6 @@
         }
     },
     {
-        "id": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10",
-        "type": "https://w3id.org/candil/qos#NetworkSlice",
-        "http://purl.org/dc/terms/identifier": {
-            "type": "Property",
-            "value": "slice_medium_performance_10"
-        },
-        "https://w3id.org/candil/qos#networkSliceType": {
-            "type": "Relationship",
-            "object": "https://w3id.org/candil/qos#NetworkSliceMedium"
-        },
-        "https://w3id.org/candil/qos#mbrDownlink": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrDownlink"
-        },
-        "https://w3id.org/candil/qos#mbrUplink": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkSlice/slice_medium_performance_10/MbrUplink"
-        },
-        "https://w3id.org/candil/qos#5qi": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/5QI/1"
-        },
-        "https://w3id.org/candil/qos#usesNetworkProfile": {
-            "type": "Relationship",
-            "object": "https://6g-chronos.org/NetworkProfile/1"
-        }
-    },
-    {
         "id": "https://6g-chronos.org/5QI/8",
         "type": "https://w3id.org/candil/qos#5QI",
         "http://purl.org/dc/terms/identifier": {
@@ -400,19 +400,23 @@
         }
     },
     {
+        "id": "https://6g-chronos.org/QoSProfile/QOS_S",
+        "type": "https://w3id.org/candil/qos#QoSProfile",
+        "http://purl.org/dc/terms/identifier": {
+            "type": "Property",
+            "value": "QOS_S"
+        },
+        "https://w3id.org/candil/qos#mapsToNetworkProfile": {
+            "type": "Relationship",
+            "object": "https://6g-chronos.org/NetworkProfile/1"
+        }
+    },
+    {
         "id": "https://6g-chronos.org/5QI/1",
         "type": "https://w3id.org/candil/qos#5QI",
         "http://purl.org/dc/terms/identifier": {
             "type": "Property",
             "value": "1"
-        }
-    },
-    {
-        "id": "https://6g-chronos.org/UserEquipment/10.0.0.1",
-        "type": "https://w3id.org/candil/qos#UserEquipment",
-        "https://w3id.org/candil/qos#ipAddress": {
-            "type": "Property",
-            "value": "10.0.0.1"
         }
     }
 ]
