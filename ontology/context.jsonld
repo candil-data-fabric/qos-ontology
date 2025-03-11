@@ -31,6 +31,13 @@
     "QoSProfile" : {
       "@id" : "https://w3id.org/candil/qos#QoSProfile"
     },
+    "mbrDownlink" : {
+      "@id" : "https://w3id.org/candil/qos#mbrDownlink",
+      "@type" : "@id"
+    },
+    "MbrUplink" : {
+      "@id" : "https://w3id.org/candil/qos#MbrUplink"
+    },
     "userEquipment" : {
       "@id" : "https://w3id.org/candil/qos#userEquipment",
       "@type" : "@id"
@@ -97,6 +104,10 @@
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
+    "mbrUplink" : {
+      "@id" : "https://w3id.org/candil/qos#mbrUplink",
+      "@type" : "@id"
+    },
     "contributor" : {
       "@id" : "http://purl.org/dc/elements/1.1/contributor"
     },
@@ -109,6 +120,9 @@
     },
     "NetworkProfile" : {
       "@id" : "https://w3id.org/candil/qos#NetworkProfile"
+    },
+    "MbrDownlink" : {
+      "@id" : "https://w3id.org/candil/qos#MbrDownlink"
     },
     "ipAddress" : {
       "@id" : "https://w3id.org/candil/qos#ipAddress"
